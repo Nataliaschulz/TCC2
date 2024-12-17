@@ -7,12 +7,12 @@ from plotly.subplots import make_subplots
 def carregar_dados(filename):
     with open(filename, 'r') as file:
         data = file.read().replace(',', '.')
-    with open('MancalInterno_Atual_SemMassa.txt', 'w') as temp_file:
+    with open('semmassa.txt', 'w') as temp_file:
         temp_file.write(data)
-    return np.loadtxt('MancalInterno_Atual_SemMassa.txt')
+    return np.loadtxt('semmassa.txt')
 
 # Carregar os dados do arquivo txt
-dados = carregar_dados('MancalInterno_Atual_SemMassa.txt')
+dados = carregar_dados('semmassa.txt')
 
 # Separar as colunas em tempo e aceleração
 tempo = dados[:, 0]  # Agora a primeira coluna é tempo
